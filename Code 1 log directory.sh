@@ -13,8 +13,9 @@
 
 
 #Main
+#due to an error on my devkit I use for these challenges I was unable to properly test this code
 cp /var/log/syslog .
 time=$(date +"%Y-%m-%d %T")
 
-echo $time >> /var/log/syslog 
+$time >> /var/log/syslog 
 
