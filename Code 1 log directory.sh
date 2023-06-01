@@ -17,5 +17,5 @@
 
 time=$(date +"%Y-%m-%d %T")
 cp /var/log/syslog . log$time
-$time >> /var/log/syslog 
+#$time >> /var/log/syslog 
 
