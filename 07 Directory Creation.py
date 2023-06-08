@@ -19,9 +19,11 @@ path = input("Type in a file path")
 #Declaration of functions:
 def lookup ():
     import os
-    os.walk(input)
+    os.walk(path)
+    print(path)
 
 
 
 
 #Main
+lookup
