@@ -35,6 +35,6 @@ Todo = ['Clean', 'Takeouttrash', 'Shop', 'Laundry', 'Appointment', 'Work', 'Feed
 print(Todo[3])
 
 # This should be 6:10 
-#print(Todo[6-10])
-print(Todo[5:9])
-print
+print(Todo[5:10])
+Todo[6] = 'onion'
+print(Todo)#print(Todo[6-10])
