@@ -36,21 +36,23 @@ answer="y"
 
 
 while [ "$answer" == "y" ]; do
-    echo "Hello World!"
-    echo "Press 1 for Ping loopback"
-    echo "Press 2 toShow IP Info"
+    echo "Press 1 to print "Hello World1""
+    echo "Press 2 for Ping loopback"
+    echo "Press 3 toShow IP Info"
     # i originally accidently had the E in echo capitalized and the command wouldnt work
-    echo "Press 3 to Exit"
+    echo "Press 4 to Exit"
     read input
 
     if [ "$input" -eq 1 ]; then
-        ping 127.0.0.1 -c 5
+        echo"Hello World!"
      elif [ "$input" -eq 2 ]; then
-        sudo lshw -class network
+        ping 127.0.0.1 -c 5
     elif [ "$input" -eq 3 ]; then
+        sudo lshw -class network
+    elif [ "$input" -eq 4 ]; then 
         exit 0
     else
-        echo "Choose a number between 1-3"
+        echo "Choose a number between 1-4"
     fi
 
     read -p "Do you want to continue (y/n)? " answer
