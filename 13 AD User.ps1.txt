@@ -1,2 +1,0 @@
-New-ADUser -Name "Franz Ferdinand" -OtherAttributes @{'title'="TPS Reporting Lead";'mail'="ferdi@GloveXpower.com"} -Organization "GlobeX" -l "Springfield" -Department "TPS"
-
