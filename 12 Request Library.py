@@ -29,6 +29,16 @@ head = requests.head(site)
 patch = requests.patch(site)
 options = requests.options(site)
 
+status_codes = {
+    200: "OK",
+    201: "Created",
+    204: "No Content",
+    400: "Bad Request",
+    401: "Unauthorized",
+    403: "Forbidden",
+    404: "Not Found",
+    500: "Internal Server Error"
+}
 
 
 # https://api.github.com
@@ -47,26 +57,23 @@ print("Press 5 for HTTP Head")
 print("Press 6 for HTTP Patch")
 print("Press 7 for HTTP Options")
 person = input()
+confirmation = input("Do you want to proceed? (Y/N): ")
+if confirmation.lower() != "y":
+    exit()
 # pass is a command to skip a elif segment 
 if person == "1":
-    print(request)
+    response = requests.get(site)
 elif person == "2":
-    print(post)
+    response = requests.post(site)
 elif person == "3":
-    print(put)
+    response = requests.put(site)
 elif person == "4":
-    print(delete)
+    response = requests.delete(site)
 elif person == "5":
-    print(head)
+    response = requests.head(site)
 elif person == "6":
-    print(patch)
+    response = requests.patch(site)
 elif person == "7":
-    print(options)
-
-
-#import requests
-
-#request(print)
-#Put this all in an if loop
-
-print(request)
+    response = requests.options(site)
+else:
+    print("Pick a number 1-7")
