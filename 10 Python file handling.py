@@ -13,8 +13,7 @@
 
 
 #Declartion of varibles:
-words = open("Ops10text", "w")
-line1 = words.readlines(1)
+words = open("Ops10text.txt", "w")
 
 #Declaration of functions:
 #words is the variable name, write is the command of what we're doing in this case writing text
@@ -29,18 +28,23 @@ words.write("Example text\n")
 words.write("This is a second line of text\n")
 words.write("A final line of text\n")
 #then you have to close the file since you cant just switch to read
-words.close
+words.close()
 #open up the file in read mode the "r" denotes read mode
-words = open("Ops10text", "r")
+words = open("Ops10text.txt", "r")
 # I dont know why below doesnt work, not even when I switch it to 1
 #words.readlines(0)
 #Chat GPT saids to make it a variable first and I dont understand why
 #lines = words.readlines()
 
 # Print the first line
+lines = words.readlines()
+#The Code below deletes the fiel
 line1 = lines[0]
 print(line1)
-words.close
-#The Code below deletes the fiel
-import os 
-os.remove(Ops10text)
+
+# Close the file by calling the close() method
+words.close()
+# Remove the file using the os module
+import os
+os.remove("Ops10text.txt")
+
