@@ -18,6 +18,7 @@
 #Time spent running a virtual CPU for guest operating systems under the control of the Linux kernel
 
 #Declartion of varibles:
+import psutil
 cpu_times = psutil.cpu_times()
 user_time = cpu_times.user
 kernel = cpu_times.system
@@ -33,7 +34,7 @@ guest = cpu_times.guest
 
 #Main
 
-import psutil
+
 
 print("Time in seconds spent by normal processes executing in user mode:", cpu_times)
 
