@@ -16,11 +16,18 @@
 #PATCH
 #OPTIONS
 
-
-#Declartion of varibles:
 import requests
-site = input("Enter a site url: ")
-#number = input("Enter a number: ")
+
+# Declaration of variables
+site = input("Enter a site URL: ")
+print("Press 1 for HTTP Get")
+print("Press 2 for HTTP Post")
+print("Press 3 for HTTP Put")
+print("Press 4 for HTTP Delete")
+print("Press 5 for HTTP Head")
+print("Press 6 for HTTP Patch")
+print("Press 7 for HTTP Options")
+person = input()
 request = requests.get(site)
 post = requests.post(site)
 put = requests.put(site)
@@ -28,6 +35,7 @@ delete = requests.delete(site)
 head = requests.head(site)
 patch = requests.patch(site)
 options = requests.options(site)
+
 
 status_codes = {
     200: "OK",
@@ -40,27 +48,10 @@ status_codes = {
     500: "Internal Server Error"
 }
 
-
-# https://api.github.com
-
-#Declaration of functions:
-
-
-
-
-#Main
-print("Press 1 for HTTP Get")
-print("Press 2 for HTTP Post")
-print("Press 3 for HTTP Put")
-print("Press 4 for HTTP Delete")
-print("Press 5 for HTTP Head")
-print("Press 6 for HTTP Patch")
-print("Press 7 for HTTP Options")
-person = input()
 confirmation = input("Do you want to proceed? (Y/N): ")
 if confirmation.lower() != "y":
     exit()
-# pass is a command to skip a elif segment 
+
 if person == "1":
     response = requests.get(site)
 elif person == "2":
@@ -77,3 +68,7 @@ elif person == "7":
     response = requests.options(site)
 else:
     print("Pick a number 1-7")
+
+print("Request Sent:\n", response.request)
+print("Response Code:", response.status_code, "-", status_codes.get(response.status_code, "Unknown"))
+print("Response Headers:")
