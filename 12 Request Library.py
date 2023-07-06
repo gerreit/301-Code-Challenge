@@ -28,14 +28,6 @@ print("Press 5 for HTTP Head")
 print("Press 6 for HTTP Patch")
 print("Press 7 for HTTP Options")
 person = input()
-request = requests.get(site)
-post = requests.post(site)
-put = requests.put(site)
-delete = requests.delete(site)
-head = requests.head(site)
-patch = requests.patch(site)
-options = requests.options(site)
-
 
 status_codes = {
     200: "OK",
